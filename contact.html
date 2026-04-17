@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - GlowAura</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="popup" class="popup"></div>
+<body style="
+    margin:0;
+    padding:0;
+    background: url('https://i.pinimg.com/736x/3f/10/ef/3f10ef4f0200a4c5eb02d45d32fcaf80.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+">
+<header>
+    <div class="logo-box">
+        <img src="https://i.pinimg.com/1200x/46/67/7f/46677f48012d8c07bb84ef89be81beab.jpg">
+        <span>GlowAura</span>
+    </div>
+   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="#" onclick="logout(); return false;">Logout</a>
+
+    </nav>
+</header>
+<section class="contact">
+    <h1 style="text-allign:center">Contact Us</h1>
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
