@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GlowAura Beauty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+<header>
+    <div class="logo-box">
+        <img src="https://i.pinimg.com/1200x/46/67/7f/46677f48012d8c07bb84ef89be81beab.jpg" alt="logo">
+        <span>GlowAura</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navLinks">
+         <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="login.html">Login</a>
+        <a href="contact.html">Help</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="#" onclick="logout(); return false;">Logout</a>
+
+    </nav>
+</header>
+<section class="video-slider">
+ <div class="slide active">
+<video autoplay muted loop playsinline>
+<source src="skin.mp4" type="video/mp4">
+ </video> 
+<div class="slide-text"></div> 
+</div> 
+<div class="slide">
+<video autoplay muted loop playsinline>
+<source src="make.mp4" type="video/mp4"> 
+</video> 
+<div class="slide-text"></div> 
+</div>
+ <div class="slide"> 
+<video autoplay muted loop playsinline>
+<source src="per.mp4" type="video/mp4">
+ </video> 
+</div>
+
+ <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+</div>
+</section>
+ <h2 class="section-title">Shop By Category</h2>
+       <div class="category-grid"> 
+           <div class="category-card" onclick="filterProducts('skincare')">
+                 <img src="https://i.pinimg.com/736x/ea/55/84/ea5584ffb1961916edd8f2d20d6a1ae7.jpg">
+                 <h3>Skincare</h3> 
+           </div>
+       <div class="category-card" onclick="filterProducts('makeup')">
+                 <img src="https://i.pinimg.com/736x/8b/b1/c6/8bb1c6b3f60f642bb4cfa60213ec7af7.jpg"> 
+                 <h3>Makeup</h3>
+       </div> 
+       <div class="category-card" onclick="filterProducts('perfume')"> 
+                <img src="https://i.pinimg.com/736x/cc/b4/39/ccb439400aa0171c910eb5753f7781d3.jpg">
+                <h3>Fragrance</h3> 
+       </div> 
+</div> 
+
+ <div class="offers"> 
+     <div class="offer-card">
+          <h3>Flat 25% OFF</h3>
+          <p>Glow Essentials</p> 
+          <button onclick="filterProducts('skincare')">Shop Now</button>
+     </div> 
+     <div class="offer-card"> 
+          <h3>Flat 30% OFF</h3>
+          <p>Luxury Makeup</p> 
+          <button onclick="filterProducts('makeup')">Shop Now</button>
+     </div>
+ </div> 
+
+<h2 class="section-title">Trending Products</h2> 
+<div class="tabs"> 
+    <button onclick="filterType('new', this)">New Arrival</button>
+    <button onclick="filterType('bestseller', this)">Best Seller</button> 
+    <button onclick="filterType('special', this)">Special</button> 
+</div> 
+
+<div class="productgrid">
+
+    <div class="card" data-category="makeup" data-type="bestseller">
+        <img src="https://i.pinimg.com/736x/d3/e1/f8/d3e1f81e62e85bd574b6fa83c1ca425f.jpg">
+        <h3>Matte Lipstick</h3>
+        <p>₹300</p>
+        <button onclick="addToCart('Matte Lipstick', 300)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="makeup" data-type="bestseller">
+        <img src="https://i.pinimg.com/736x/1d/75/f0/1d75f063368ad108f5be2e77ed32c5ce.jpg">
+        <h3>Liquid Foundation</h3>
+        <p>₹899</p>
+        <button onclick="addToCart('Liquid Foundation', 899)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="new">
+        <img src="https://i.pinimg.com/1200x/70/ed/22/70ed2270625e229e3f6433d311ff9b68.jpg">
+        <h3>Face Cream</h3>
+        <p>₹699</p>
+        <button onclick="addToCart('Face Cream', 699)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="perfume" data-type="bestseller">
+        <img src="https://i.pinimg.com/1200x/80/30/40/8030406692ac3153b8fd1d6ad05d71be.jpg">
+        <h3>Luxury Perfume</h3>
+        <p>₹999</p>
+        <button onclick="addToCart('Luxury Perfume', 999)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="makeup" data-type="new">
+        <img src="https://i.pinimg.com/avif/736x/46/ec/77/46ec7739839d8cf00d7a3dc0e7a55e0e.avf">
+        <h3>Glossy Lipstick</h3>
+        <p>₹350</p>
+        <button onclick="addToCart('Glossy Lipstick', 350)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="makeup" data-type="bestseller">
+        <img src="https://i.pinimg.com/1200x/05/7e/38/057e3844e87f0be6a31a67a47920a41f.jpg">
+        <h3>Compact Powder</h3>
+        <p>₹499</p>
+        <button onclick="addToCart('Compact Powder', 499)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="new">
+        <img src="https://i.pinimg.com/736x/af/e6/a7/afe6a71c8e26d84f61a284c29f6f2667.jpg">
+        <h3>Night Cream</h3>
+        <p>₹799</p>
+        <button onclick="addToCart('Night Cream', 799)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="perfume" data-type="new">
+        <img src="https://i.pinimg.com/1200x/87/a2/2c/87a22c367e206c6ffd5600cfad4353a4.jpg">
+        <h3>Body Mist</h3>
+        <p>₹599</p>
+        <button onclick="addToCart('Body Mist', 599)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="special">
+        <img src="https://i.pinimg.com/1200x/b4/3a/00/b43a004b97d785cfb87112df7278772b.jpg">
+        <h3>Vitamin C Serum</h3>
+        <p>₹799</p>
+        <button onclick="addToCart('Vitamin C Serum', 799)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="makeup" data-type="special">
+        <img src="https://i.pinimg.com/1200x/d4/b1/0c/d4b10ca19a579b24546a315df3e6cd62.jpg">
+        <h3>Waterproof Eyeliner</h3>
+        <p>₹249</p>
+        <button onclick="addToCart('Waterproof Eyeliner', 249)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="bestseller">
+        <img src="https://i.pinimg.com/736x/c9/a9/c3/c9a9c3c745c1e3f54392fa06c7f202a9.jpg">
+        <h3>Sunscreen</h3>
+        <p>₹499</p>
+        <button onclick="addToCart('Sunscreen', 499)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="special">
+        <img src="https://i.pinimg.com/736x/d8/ba/99/d8ba99b857fd6c99ee5f4dce708d12ba.jpg">
+        <h3>Toner</h3>
+        <p>₹459</p>
+        <button onclick="addToCart('Toner', 459)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="special">
+        <img src="https://i.pinimg.com/1200x/f5/fe/09/f5fe0916f95a67555b460514b22f5786.jpg">
+        <h3>Lip Balm</h3>
+        <p>₹399</p>
+        <button onclick="addToCart('Lip Balm', 399)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="skincare" data-type="bestseller">
+        <img src="https://i.pinimg.com/736x/be/47/bf/be47bf13b507f26d8adf4a73fa8722c9.jpg">
+        <h3>Cleanser</h3>
+        <p>₹699</p>
+        <button onclick="addToCart('Cleanser', 699)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="makeup" data-type="special">
+        <img src="https://i.pinimg.com/736x/f0/c8/d6/f0c8d6ab62844dafdd3bf9eb6b29e946.jpg">
+        <h3>Eyeshadow Palette</h3>
+        <p>₹400</p>
+        <button onclick="addToCart('Eyeshadow Palette', 400)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="makeup" data-type="special">
+        <img src="https://i.pinimg.com/1200x/e6/72/97/e672973fb5cec8a6d43be575a9ac8ffe.jpg">
+        <h3>Concealer</h3>
+        <p>₹399</p>
+        <button onclick="addToCart('Concealer', 399)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="perfume" data-type="new">
+        <img src="https://i.pinimg.com/1200x/81/8b/84/818b845c8e3b1fe8dff77e3cd050fdff.jpg">
+        <h3>Setting Spray</h3>
+        <p>₹799</p>
+        <button onclick="addToCart('Setting Spray', 799)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="perfume" data-type="bestseller">
+        <img src="https://i.pinimg.com/avif/1200x/2c/14/00/2c1400d8b145d6c0349fa2ac0cba7fa0.avf">
+        <h3>Body Wash</h3>
+        <p>₹555</p>
+        <button onclick="addToCart('Body Wash', 555)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="perfume" data-type="new">
+        <img src="https://i.pinimg.com/avif/1200x/17/68/26/176826fd7e7f48459c282a549aad28df.avf">
+        <h3>Solid Perfume</h3>
+        <p>₹355</p>
+        <button onclick="addToCart('Solid Perfume', 355)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="perfume" data-type="new">
+        <img src="https://i.pinimg.com/avif/736x/ae/b1/0b/aeb10b9a2d6f3f359275e1b83d4f5dec.avf">
+        <h3>Scented Candles</h3>
+        <p>₹599</p>
+        <button onclick="addToCart('Scented Candles', 599)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="skincare" data-type="new">
+        <img src="https://i.pinimg.com/736x/b6/f5/89/b6f58955b31111cb6b507224e77aafaa.jpg">
+        <h3>Face Mask</h3>
+        <p>₹799</p>
+        <button onclick="addToCart('Face Mask', 799)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="skincare" data-type="special">
+        <img src="https://i.pinimg.com/736x/c1/8b/77/c18b7757186059195797904c21c569ea.jpg">
+        <h3>Facial Tools</h3>
+        <p>₹999</p>
+        <button onclick="addToCart('Facial Tools', 999)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="makeup" data-type="bestseller">
+        <img src="https://i.pinimg.com/1200x/7f/64/b2/7f64b268846d41ab448e7eb19f4ef2ad.jpg">
+        <h3>Highlighter</h3>
+        <p>₹455</p>
+        <button onclick="addToCart('Highlighter', 455)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="perfume" data-type="special">
+        <img src="https://i.pinimg.com/1200x/b5/ab/d2/b5abd202198ab3de00a13aa3401e7f0e.jpg">
+        <h3>Perfume Oil Roll-On</h3>
+        <p>₹255</p>
+        <button onclick="addToCart('Perfume Oil Roll-On', 255)">Add to Cart</button>
+    </div>
+
+</div>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}, 4000);
+
+document.querySelector(".next").onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+};
+
+document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+};
+</script>
+<script src="script.js"></script>
+</body>
+ </html>
+
