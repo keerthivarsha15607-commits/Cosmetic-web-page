@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GlowAura Beauty - Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadCart()">
+<div id="orderModal" class="modal">
+    <div class="modal-box">
+        <h2>🎉 Order Placed!</h2>
+        <p id="orderDetails"></p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+<header>
+    <div class="logo-box">
+        <img src="https://i.pinimg.com/1200x/46/67/7f/46677f48012d8c07bb84ef89be81beab.jpg" alt="logo">
+        <span>GlowAura</span>
+    </div>
+   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="login.html">Login</a>
+        <a href="contact.html">Help</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="#" onclick="logout(); return false;">Logout</a>
+    </nav>
+</header>
+<h2 class="cart-title">🛒 Shopping Cart</h2>
+<div class="cart-wrapper">
+
+    <div class="cart-left">
+    <p class="section-label" id="itemCount">ITEMS</p>
+    <div id="cartItems"></div>
+     </div>
+
+   <div class="cart-right">
+
+      <div class="panel">
+      <p class="panel-title">Delivery</p>
+      <div class="del-opt selected" onclick="selectDel(this, 0)">
+        <div class="del-icon">📦</div>
+        <div class="del-info">
+          <div class="del-name">Standard <span class="free-badge">Free</span></div>
+          <div class="del-eta">Arrives in 5–7 days</div>
+        </div>
+        <div class="del-cost">Free</div>
+      </div>
+      <div class="del-opt" onclick="selectDel(this, 99)">
+        <div class="del-icon">⚡</div>
+        <div class="del-info">
+          <div class="del-name">Express</div>
+          <div class="del-eta">Arrives in 1–2 days</div>
+        </div>
+        <div class="del-cost">₹99</div>
+      </div>
+      <div class="del-opt" onclick="selectDel(this, 199)">
+        <div class="del-icon">🕐</div>
+        <div class="del-info">
+          <div class="del-name">Same Day</div>
+          <div class="del-eta">Arrives by 10 PM today</div>
+        </div>
+        <div class="del-cost">₹199</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Payment Method</p>
+      <div class="pay-grid">
+        <div class="pay-opt selected" onclick="selectPay(this)">
+          <div class="pay-icon">💳</div>
+          <div class="pay-name">Credit / Debit</div>
+        </div>
+        <div class="pay-opt" onclick="selectPay(this)">
+          <div class="pay-icon">📱</div>
+          <div class="pay-name">UPI</div>
+        </div>
+        <div class="pay-opt" onclick="selectPay(this)">
+          <div class="pay-icon">🏦</div>
+          <div class="pay-name">Net Banking</div>
+        </div>
+        <div class="pay-opt" onclick="selectPay(this)">
+          <div class="pay-icon">💰</div>
+          <div class="pay-name">Cash on Delivery</div>
+        </div>
+         </div>
+         </div>
+
+       <div class="panel">
+      <p class="panel-title">Order Summary</p>
+      <div class="sum-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="sum-row"><span>Delivery</span><span id="deliveryFeeDisplay">Free</span></div>
+      <div class="sum-row"><span>Discount</span><span class="disc" id="discountDisplay">−₹0</span></div>
+      <div class="sum-row total"><span>Total</span><span id="totalPrice">₹0</span></div>
+      <button class="checkout-btn" id="checkoutBtn" onclick="placeOrder()">Proceed to Checkout →</button>
+    </div>
+    </div>
+</div>
+<script>
+cartItems.innerHTML += `
+<div class="cart-row">
+
+    <div class="cart-col name">${item.name}</div>
+
+    <div class="cart-col price">₹${item.price}</div>
+
+    <div class="cart-col action">
+        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+    </div>
+
+</div>
+`;
+</script>
+<script src="script.js"></script>
+</body>
+</html>
