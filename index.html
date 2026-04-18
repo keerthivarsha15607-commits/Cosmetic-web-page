@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GlowAura Beauty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<header>
+    <div class="logo-box">
+        <img src="https://i.pinimg.com/1200x/46/67/7f/46677f48012d8c07bb84ef89be81beab.jpg">
+        <span>GlowAura</span>
+    </div>
+
+   
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="login.html">Login</a>
+        <a href="contact.html">Help</a>
+        <a href="cart.html">Cart 🛒</a>
+        <a href="#" onclick="logout(); return false;">Logout</a>
+    </nav>
+</header>
+<section class="main">
+    <div class="main-content">
+        <h1 id="typingText" class="typing"></h1>
+        <p id="subText" class="typing"></p>
+        <a class='btn' href='products.html'>Shop Now</a>
+    </div>
+</section>
+
+<section class="products">
+    <h2>Our Best Sellers</h2>
+    <div class="productgrid">
+    <div class="card">
+            <img src="lipstick.jpg" alt="Lipstick">
+            <h3>Matte Lipstick</h3>
+            <p>₹300</p>
+             <button onclick="addToCart('Matte Lipstick',300,'lipstick.jpg')">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="Found.jpg" alt="Foundation">
+            <h3>Liquid Foundation</h3>
+            <p>₹899</p>
+            <button onclick="addToCart('Liquid Foundation',899,'Found.jpg')">Add to Cart</button>
+
+         </div>
+        <div class="card">
+            <img src="cream.jpg" alt="Face Cream">
+            <h3>Hydrating Face Cream</h3>
+            <p>₹699</p>
+            <button onclick="addToCart('Hydrating Face Cream',699,'cream.jpg')">Add to Cart</button>
+
+        </div>
+        <div class="card">
+            <img src="perfume.jpg" alt="Perfume">
+            <h3>Luxury Perfume</h3>
+            <p>₹999</p>
+            <button onclick="addToCart('Luxury Perfume',999,'perfume.jpg')">Add to Cart</button>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 GlowAura Beauty</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+window.onload = function () {
+    typeMain();   
+    loadCart();   
+    showUser();   
+};
+</script>
+</body>
+</html>
